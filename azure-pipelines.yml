@@ -27,7 +27,7 @@ steps:
     workingDirectory: 'environment_setup'
 
 - script: | 
-   az login --service-principal --tenant 9be81a95-7870-42f4-bb8d-a44ada88130a --username 790df8b9-eea1-44f4-8545-086b629260e1 --password cVl8Q~I4w9gwWqBnYkWEZHUMP-eDaWomvqFLzdB-
+   az login --service-principal --tenant 9be81a95-7870-42f4-bb8d-a44ada88130a --username 08b2b726-e091-4a71-abac-59ce6b51e1b2 --password cVl8Q~I4w9gwWqBnYkWEZHUMP-eDaWomvqFLzdB-
    
   displayName: 'Login to Azure'
 
