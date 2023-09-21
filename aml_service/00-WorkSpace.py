@@ -27,6 +27,7 @@ from azureml.core import Workspace
 import os, json, sys
 import azureml.core
 from azureml.core.authentication import AzureCliAuthentication
+from azureml.core.authentication import InteractiveLoginAuthentication
 
 print("SDK Version:", azureml.core.VERSION)
 # print('current dir is ' +os.curdir)
@@ -38,14 +39,16 @@ resource_group = config["resource_group"]
 subscription_id = config["subscription_id"]
 location = config["location"]
 
-cli_auth = AzureCliAuthentication()
+# cli_auth = AzureCliAuthentication()
+interactive_auth = InteractiveLoginAuthentication(tenant_id="9be81a95-7870-42f4-bb8d-a44ada88130a")
+
 
 try:
     ws = Workspace.get(
         name=workspace_name,
-        subscription_id=subscription_id,
+        subscription_id=790df8b9-eea1-44f4-8545-086b629260e1, #subscription_id,
         resource_group=resource_group,
-        auth=cli_auth,
+        auth=interactive_auth,
     )
 
 except:
@@ -53,11 +56,11 @@ except:
     print("Creating new workspace")
     ws = Workspace.create(
         name=workspace_name,
-        subscription_id=subscription_id,
+        subscription_id=790df8b9-eea1-44f4-8545-086b629260e1, #subscription_id,
         resource_group=resource_group,
         # create_resource_group=True,
         location=location,
-        auth=cli_auth,
+        auth=interactive_auth,
     )
 
 # print Workspace details
