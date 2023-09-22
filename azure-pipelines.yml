@@ -39,11 +39,11 @@ steps:
 # - script: 'pytest tests/unit/data_test.py'
 #   displayName: 'Data Quality Check'
 
-- script: 'python aml_service/00-WorkSpace.py'
-  displayName: 'Get or Create Workspace'
+# - script: 'python aml_service/00-WorkSpace.py'
+#   displayName: 'Get or Create Workspace'
 
-- script: 'python aml_service/03-AttachAmlCluster.py'
-  displayName: 'Create AML Compute Cluster'
+# - script: 'python aml_service/03-AttachAmlCluster.py'
+#   displayName: 'Create AML Compute Cluster'
 
 - script: 'python aml_service/04-AmlPipelines.py'
   displayName: 'Create and Test AML Pipeline'
