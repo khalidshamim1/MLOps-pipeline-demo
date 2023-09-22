@@ -68,7 +68,7 @@ experiment_name = config["experiment_name"]
 aml_cluster_name = config["aml_cluster_name"]
 aml_pipeline_name = "training-pipeline"
 
-source_directory = "code"
+source_directory = "code @ 84841ef"
 
 # Run Config
 # Declare packages dependencies required in the pipeline (these can also be expressed as a YML file)
