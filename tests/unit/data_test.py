@@ -34,7 +34,7 @@ def get_absPath(filename):
     """Returns the path of the notebooks folder"""
     path = os.path.abspath(
         os.path.join(
-            os.path.dirname(__file__), os.path.pardir, os.path.pardir, "data", filename
+            os.path.dirname(__file__), os.path.pardir, os.path.pardir, "database", filename
         )
     )
     return path
