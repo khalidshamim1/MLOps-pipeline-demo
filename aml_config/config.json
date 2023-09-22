@@ -1,6 +1,6 @@
 {
     "subscription_id": "<>",
     "resource_group": "MLops_training",
-    "workspace_name": "AzureML_Demo_ws",
+    "workspace_name": "AzureML_Demo_WorkSP",
     "location": "southcentralus"
 }
