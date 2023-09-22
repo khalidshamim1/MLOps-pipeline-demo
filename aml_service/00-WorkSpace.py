@@ -54,7 +54,7 @@ try:
         name=workspace_name,
         subscription_id = subscription_id,
         resource_group=resource_group,
-        auth=interactive_auth,
+        auth=svc_pr,
     )
 
 except:
