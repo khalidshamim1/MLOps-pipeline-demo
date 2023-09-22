@@ -64,7 +64,7 @@ except:
         name=workspace_name,
         subscription_id= subscription_id,
         resource_group=resource_group,
-        # create_resource_group=True,
+        create_resource_group=True,
         location=location,
         auth=svc_pr,
     )
