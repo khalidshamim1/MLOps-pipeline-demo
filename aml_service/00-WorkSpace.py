@@ -28,6 +28,8 @@ import os, json, sys
 import azureml.core
 from azureml.core.authentication import AzureCliAuthentication
 from azureml.core.authentication import InteractiveLoginAuthentication
+from azureml.core.authentication import ServicePrincipalAuthentication
+
 
 print("SDK Version:", azureml.core.VERSION)
 # print('current dir is ' +os.curdir)
@@ -40,13 +42,17 @@ subscription_id = config["subscription_id"]
 location = config["location"]
 
 # cli_auth = AzureCliAuthentication()
-interactive_auth = InteractiveLoginAuthentication(tenant_id="9be81a95-7870-42f4-bb8d-a44ada88130a")
+# interactive_auth = InteractiveLoginAuthentication(tenant_id="9be81a95-7870-42f4-bb8d-a44ada88130a")
+svc_pr = ServicePrincipalAuthentication(
+    tenant_id="9be81a95-7870-42f4-bb8d-a44ada88130a",
+    service_principal_id="08b2b726-e091-4a71-abac-59ce6b51e1b2",
+    service_principal_password="cVl8Q~I4w9gwWqBnYkWEZHUMP-eDaWomvqFLzdB-")
 
 
 try:
     ws = Workspace.get(
         name=workspace_name,
-        subscription_id = "749c5a94-1a79-4a7c-a52b-5e57c21cb30c", #subscription_id,
+        subscription_id = subscription_id,
         resource_group=resource_group,
         auth=interactive_auth,
     )
@@ -56,11 +62,11 @@ except:
     print("Creating new workspace")
     ws = Workspace.create(
         name=workspace_name,
-        subscription_id= "749c5a94-1a79-4a7c-a52b-5e57c21cb30c", #subscription_id,
+        subscription_id= subscription_id,
         resource_group=resource_group,
         # create_resource_group=True,
         location=location,
-        auth=interactive_auth,
+        auth=svc_pr,
     )
 
 # print Workspace details
