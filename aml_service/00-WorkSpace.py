@@ -46,7 +46,7 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="9be81a95-7870-42f4-
 try:
     ws = Workspace.get(
         name=workspace_name,
-        subscription_id = "790df8b9-eea1-44f4-8545-086b629260e1", #subscription_id,
+        subscription_id = "749c5a94-1a79-4a7c-a52b-5e57c21cb30c", #subscription_id,
         resource_group=resource_group,
         auth=interactive_auth,
     )
@@ -56,7 +56,7 @@ except:
     print("Creating new workspace")
     ws = Workspace.create(
         name=workspace_name,
-        subscription_id= "790df8b9-eea1-44f4-8545-086b629260e1", #subscription_id,
+        subscription_id= "749c5a94-1a79-4a7c-a52b-5e57c21cb30c", #subscription_id,
         resource_group=resource_group,
         # create_resource_group=True,
         location=location,
