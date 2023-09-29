@@ -44,9 +44,9 @@ location = config["location"]
 # cli_auth = AzureCliAuthentication()
 # interactive_auth = InteractiveLoginAuthentication(tenant_id="9be81a95-7870-42f4-bb8d-a44ada88130a")
 svc_pr = ServicePrincipalAuthentication(
-    tenant_id="9be81a95-7870-42f4-bb8d-a44ada88130a",
-    service_principal_id="08b2b726-e091-4a71-abac-59ce6b51e1b2",
-    service_principal_password="cVl8Q~I4w9gwWqBnYkWEZHUMP-eDaWomvqFLzdB-")
+    tenant_id=,
+    service_principal_id=,
+    service_principal_password=)
 
 
 try:
